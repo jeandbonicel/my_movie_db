@@ -1,0 +1,291 @@
+body {
+	background: #eee;
+	overflow-x: hidden;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	color: #ffffff;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+	h1 {
+		font-family: "Open Sans", sans-serif;
+		font-size: 20px;
+	}
+}
+
+.page {
+	position: relative;
+}
+
+section.content {
+	height: 100%;
+}
+
+#search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 50px;
+	background-color: "#ffffff";
+	box-shadow: 0 3px 5px -2px rgba(85, 85, 85, 0.15);
+	width: 100%;
+
+	.search-content{
+		display: flex;
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 7px;
+		background: #fff;
+	    
+	    .box{
+	    	height: 32px;
+			overflow: hidden;
+			vertical-align: middle;
+			background: #f2f2f2;
+			border: 1px solid transparent;
+			border-radius: 4px;
+			width: 80%;
+			padding-left: 10px;
+			padding-right: 10px;
+			display: flex;
+	    	input {
+				display: block;
+			    height: 100%;
+			    font-family: "Open Sans", sans-serif;
+			    font-size: 14px;
+			    color: black;
+			    background-color: transparent;
+			    border: 0;
+			    outline: none;
+			    transition: width 0.4s;
+			    transition-delay: 0.4s;
+			    flex: 1;
+			}
+	    }
+	}
+
+	#result {
+		max-height: 300px;
+		overflow-y: scroll;
+		display: flex;
+		flex:1;
+		width: 80%;
+		
+		#see-all {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color : #222;
+			padding: 10px;
+			font-family: "Open Sans", sans-serif;
+		}
+		
+		#result-list {
+			width: 100%;
+
+			ul {
+
+				li {
+					a {
+					    padding: 10px;
+					    display: flex;
+					    align-items: center;
+					    background: #feeeee;
+    					border: 3px solid #fff;
+    					text-decoration: none;
+    					color: #444;
+    					font-family: "Open Sans", sans-serif;
+
+    					img {
+							background: #aaa;
+							width: 45px;
+							height: 45px;
+    					}
+					    .title {
+					    	margin-left: 20px;
+					    } 
+
+					    .type {
+							margin-left: auto;
+							border: 2px solid;
+							padding: 4px;
+							border-radius: 4px;
+							font-weight: bold;
+
+							&.movie {
+								border-color : rgba(0, 213, 115, 1);
+								background : rgba(0, 213, 115, 0.2);
+								color: rgba(0, 213, 115, 1);
+							}
+
+							&.person {
+								border-color : rgba(246, 45, 93, 1);
+								background : rgba(246, 45, 93, 0.2);
+								color: rgba(246, 45, 93, 1);
+								
+							}
+
+							&.tv {
+								border-color : rgba(45, 212, 247, 1);
+								background : rgba(45, 212, 247, 0.2);
+								color: rgba(45, 212, 247, 1);
+								
+							}
+					    }
+					}
+				}
+			}
+		}
+	}
+}
+
+#content {
+    background: #eee;
+    height: 100%;
+    width: 100%;
+
+    #content-result {
+		
+		.no-result {
+			position: absolute;
+			top: 50%;
+			left: 45%;
+			font-size: 50px;
+			color: #aaa;
+			font-family: "Open Sans", sans-serif;
+		}
+
+		.inner {
+			padding: 10%;
+			padding-top: 30px;
+			width: 80%;
+			display: flex;
+
+			.avatar img{
+				border: 10px solid #fff;
+				box-shadow: 0 3px 5px -2px rgba(85, 85, 85, 0.55);
+			}
+
+			.legend {
+
+				width: 40%;
+				padding: 30px;
+				padding-top: 0;
+				.title, .name {
+					margin-bottom: 30px;
+					font-family: "Open Sans", sans-serif;
+					font-size: 20px;
+				}
+
+				.overview, .biography {
+					font-family: "Open Sans", sans-serif;
+					font-size: 14px;
+					font-style: italic;
+				}
+			}
+		}
+	}
+
+
+	#list-see-all {
+	    display: flex;
+	    flex-direction: column;
+	    width: 100%;
+	    height: 100%;
+	    align-items: center;
+	    position: relative;
+
+		ul {
+		    display: flex;
+		    flex-wrap: wrap;
+		    width: 80%;
+		    padding-bottom: 80px;
+
+			.item {
+				width: 320px;
+				height: 160px;
+				border: 8px solid #fff;
+				margin: 11px;
+				overflow: hidden;
+				box-shadow: 0 3px 5px -2px rgba(85, 85, 85, 0.55);
+				position: relative;
+
+				a {
+					text-decoration: none;
+				}
+
+				img {
+					position: absolute;
+				}
+
+				.legend-card {
+					position: relative;
+					z-index: 3;
+					background: rgba(0, 0, 0, 0.75);
+					color: #fff;
+					padding: 4px;
+					font-family: "Open Sans", sans-serif;
+					box-shadow: 0 3px 5px -2px rgba(85, 85, 85, 0.55);
+					font-size: 12px;
+					display: flex;
+
+					.type {
+						margin-left: auto;
+						padding: 4px;
+						border: 1px solid;
+						border-radius: 4px;
+						&.movie {
+							border-color : rgba(0, 213, 115, 1);
+							background : rgba(0, 213, 115, 0.2);
+							color: rgba(0, 213, 115, 1);
+						}
+
+						&.person {
+							border-color : rgba(246, 45, 93, 1);
+							background : rgba(246, 45, 93, 0.2);
+							color: rgba(246, 45, 93, 1);
+							
+						}
+
+						&.tv {
+							border-color : rgba(45, 212, 247, 1);
+							background : rgba(45, 212, 247, 0.2);
+							color: rgba(45, 212, 247, 1);
+							
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	.inner-button {
+			position: absolute;
+			bottom: 0;
+			padding: 20px;
+			background: #fff;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.previous, .next {
+				font-size: 20px;
+				font-family: "Open Sans", sans-serif;
+				margin-left: 10px;
+				margin-right: 10px;
+
+				a {
+					color : #222;
+				}
+			}
+		}
+}
+
+
