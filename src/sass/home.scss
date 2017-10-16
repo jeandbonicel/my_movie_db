@@ -42,7 +42,9 @@ section.content {
 		flex-direction: column;
 		padding: 7px;
 		background: #fff;
-	    
+	    position: relative;
+		z-index: 3;
+		
 	    .box{
 	    	height: 32px;
 			overflow: hidden;
